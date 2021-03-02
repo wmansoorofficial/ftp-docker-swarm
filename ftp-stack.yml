@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  ftp:
+    image: ftp-server:latest
+    volumes:
+      - ../file-server/:/file-server/
+      - ../file-server-anon/:/file-server-anon/
+    ports:
+      - "21:21"
+      - "5000-5020:5000-5020"
